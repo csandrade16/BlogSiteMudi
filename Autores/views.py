@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import render, get_list_or_404
+from django.http import request
 from .models import Cadastro
 from .forms import AutorForm
 from django.contrib.auth.models import User, Group

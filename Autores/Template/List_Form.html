@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Autores</title>
+</head>
+<body>
+
+<h2>Lista Autores</h2>
+
+
+{% block content %}
+    {% for post in Cadastro %}
+        <div class="post">
+            <ul>
+                <li>{{ post.nome}}</li>
+                <li>{{ post.sobrenome}}</li>
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+</body>
+</html>

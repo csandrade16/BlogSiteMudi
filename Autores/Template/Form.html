@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro Autor</h1>
+
+    <form action="" method="post">
+        <p>Nome:
+            <label for="id_nome">
+                <input type="text" name="nome" maxlength="50" required id="id_nome" />
+           </label>
+         </p>
+
+        <p>Sobrenome:
+            <label for="id_sobrenome">
+                 <input type="text" name="sobrenome" maxlength="50" required id="id_sobrenme" />
+            </label>
+        </p>
+
+        {% csrf_token %}
+        <input type="submit" id="submit-button" class="submit-button" value="Enviar"/>
+    </form>
+</body>
+</html>
