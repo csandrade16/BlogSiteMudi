@@ -12,6 +12,8 @@ class PublicationsViewSet(viewsets.ModelViewSet):
     queryset = Publicacao.objects.all()
     serializer_class = PublicacaoSerializer
 
+
+
 class PublicacaoList(APIView):
     """
     List all Publications, or create a new Publication.
@@ -31,20 +33,27 @@ class PublicacaoList(APIView):
 
 
 class PublicacaoDetail(APIView):
-    def get_object(self, pk):
-        try:
-            return Publicacao.objects.get(pk=pk)
-        except Publicacao.DoesNotExist:
-            raise Http404
+        def get_object(self, pk):
+                try:
+                   return Publicacao.objects.get(pk=pk)
+                except Publicacao.DoesNotExist:
+                    raise Http404
 
 
-serializer_class = PublicacaoSerializer
+
+
 class PostList(generics.ListAPIView):
-    def get_queryset(self):
+    serializer_class = PublicacaoSerializer
 
+    def get_queryset(self):
+        """
+        This view should return a list of all the datas
+        for the currently authenticated author, title and description
+        """
         author = self.request.author
         title = self.request.title
         description = self.request.description
         return Publicacao.objects.filter(author=author, title=title, description=description)
+
 
 
