@@ -3,6 +3,4 @@ from .models import Publicacao
 
 
 class PublicaoAdmin(admin.ModelAdmin):
-    admin.site.register(Publicacao)
-
-
+    admin.site.register(Publicacao),
